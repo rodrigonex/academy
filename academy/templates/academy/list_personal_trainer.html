@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+
+    <!-- Importe o CSS do Bootstrap usando um CDN -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/form_personal.css' %}"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/sobre/">Serviços</a>
+          </li>
+          <li class="nav-item">
+            <span class="navbar-text">|</span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contato/">Planos</a>
+          </li>
+          <li class="nav-item">
+            <span class="navbar-text">|</span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contato/">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <span class="navbar-text">|</span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contato/">Contato</a>
+          </li>
+          <li class="nav-item button-menu">
+            <a class="btn" href="/contato/">Cadastre-se</a>
+          </li>
+          <li class="nav-item button-menu">
+            <a class="btn" href="/contato/">Login</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <section class="form">
+        <ul>
+            {% for personal_trainer in personal_trainers %}
+            <li>
+              
+              {{personal_trainer.name}} - {{personal_trainer.specialization}} - {{personal_trainer.experience}} -
+              {{personal_trainer.registration_number}}
+              </a>
+            </li>
+      
+            {% endfor %}
+          </ul>
+    </section>
+    <footer>
+      <div>
+        <h3>Entre em contato : <span>+55 00000-0000<span></h3>
+        <h3>Follow us : @academiaEstacio</h3>
+      </div>
+      <h3>Copyright @2023 . Todos os Direitos Reservados</h3>
+    </footer>
+    <!-- Importe os scripts JavaScript do Bootstrap usando um CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
