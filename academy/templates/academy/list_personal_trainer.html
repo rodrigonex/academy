@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Listar Personal</title>
 
     <!-- Importe o CSS do Bootstrap usando um CDN -->
     <link
@@ -14,58 +14,59 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="{% static 'css/form_personal.css' %}"
+      href="{% static 'css/personal_list.css' %}"
     />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/sobre/">Serviços</a>
-          </li>
-          <li class="nav-item">
-            <span class="navbar-text">|</span>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/contato/">Planos</a>
-          </li>
-          <li class="nav-item">
-            <span class="navbar-text">|</span>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/contato/">Sobre</a>
-          </li>
-          <li class="nav-item">
-            <span class="navbar-text">|</span>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/contato/">Contato</a>
-          </li>
-          <li class="nav-item button-menu">
-            <a class="btn" href="/contato/">Cadastre-se</a>
-          </li>
-          <li class="nav-item button-menu">
-            <a class="btn" href="/contato/">Login</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <section class="form">
-        <ul>
+    <section >
+      <h3>Gerenciar  Treinadores </h3>
+      <section class="painel">
+        <div class="message">
+          <p>Enviar Mensagem em Massa</p>
+          <div>
+            <img src="{% static 'images/msg.png' %}"/>
+          </div>
+        </div>
+        <div class="qtd">
+          <p>Quantidade de Treinadores </p>
+          <h1>{{ personal_trainer_length }}</h1>
+        </div>
+        <div class="add-personal">
+          <a href="{% url 'form_personal_trainer' %}">
+            <p>Adicionar Treinador</p>
+              <div>
+                <img src="{% static 'images/add.png' %}">
+              </div>
+            </a>
+        </div>
+      </section>
+    </section>
+    <section class="section-table">
+      <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Especialização</th>
+                <th>Experiência</th>
+                <th>Numero de registro</th>
+                <th style="text-align: center;">Ação</th>
+            </tr>
+        </thead>
+        <tbody>
             {% for personal_trainer in personal_trainers %}
-            <li>
-              
-              {{personal_trainer.name}} - {{personal_trainer.specialization}} - {{personal_trainer.experience}} -
-              {{personal_trainer.registration_number}}
-              </a>
-            </li>
-      
+                <tr data-id={{personal_trainer.id}}>
+                    <td >{{ personal_trainer.name }}</td>
+                    <td>{{ personal_trainer.specialization }}</td>
+                    <td>{{ personal_trainer.experience }}</td>
+                    <td>{{ personal_trainer.registration_number }}</td>
+                    <td style="width: 250px;">
+                      <button class="btn btn-deletar" type="button"><a href="{% url 'url_delete' personal_trainer.id %}">Deletar</a></button>
+                      <button class="btn btn-editar" type="button"><a href="{% url 'url_update' personal_trainer.id %}">Editar</a></button>
+                    </td>
+                </tr>
             {% endfor %}
-          </ul>
+        </tbody>
+    </table>
     </section>
     <footer>
       <div>
