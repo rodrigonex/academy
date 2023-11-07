@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Listar Customer</title>
+
+    <!-- Importe o CSS do Bootstrap usando um CDN -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/customer_list.css' %}"
+    />
+  </head>
+  <body>
+    <section >
+      <h3>Gerenciar  Alunos </h3>
+      <section class="painel">
+        <div class="message">
+          <p>Enviar Mensagem em Massa</p>
+          <div>
+            <img src="{% static 'images/msg.png' %}"/>
+          </div>
+        </div>
+        <div class="qtd">
+          <p>Quantidade de Alunos </p>
+          <h1>{{ customer_length }}</h1>
+        </div>
+        <div class="add-customer">
+          <a href="{% url 'form_customer' %}">
+            <p>Adicionar Aluno</p>
+              <div>
+                <img src="{% static 'images/add.png' %}">
+              </div>
+            </a>
+        </div>
+      </section>
+    </section>
+    <section class="section-table">
+      <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Sexo</th>
+                <th>Endereço</th>
+                <th>Numero de telefone</th>
+                <th style="text-align: center;">Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for customer in customers %}
+                <tr data-id={{customer.id}}>
+                    <td >{{ customer.name }}</td>
+                    <td>{{ customer.age }}</td>
+                    <td>{{ customer.sex }}</td>
+                    <td>{{ customer.address }}</td>
+                    <td>{{ customer.phone_number }}</td>
+                    <td style="width: 250px;">
+                      <button class="btn btn-deletar" type="button"><a href="{% url 'url_delete_customer' customer.id %}">Deletar</a></button>
+                      <button class="btn btn-editar" type="button"><a href="{% url 'url_update_customer' customer.id %}">Editar</a></button>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </section>
+    <footer>
+      <div>
+        <h3>Entre em contato : <span>+55 00000-0000<span></h3>
+        <h3>Follow us : @academiaEstacio</h3>
+      </div>
+      <h3>Copyright @2023 . Todos os Direitos Reservados</h3>
+    </footer>
+    <!-- Importe os scripts JavaScript do Bootstrap usando um CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

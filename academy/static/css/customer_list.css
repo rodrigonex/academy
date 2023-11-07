@@ -1,0 +1,140 @@
+section h3 {
+    margin: 50px 5% 10px 5%; 
+}
+
+.painel{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-bottom: 53px;
+}
+
+.table{
+    width: 90%;
+    margin-left: 5%;
+}
+
+.message{
+    width: 30%;
+    background-color: #65E1D3;
+    border-radius: 5px;
+    border: 1px solid black;
+    height: 178px;
+}
+
+.message p {
+    font-weight: bold;
+    font-size: 24px;
+    margin: 16px 0;
+    text-align: center;
+}
+
+.message div {
+    text-align: end;
+    padding-right: 20px;
+}
+
+.qtd{
+    width: 30%;
+    background-color: rgba(67, 69, 78, 0.25);
+    border-radius: 5px;
+    border: 1px solid black;
+    margin: 0 20px;
+    height: 178px;
+}
+
+.qtd p {
+    font-weight: bold;
+    font-size: 24px;
+    margin: 16px 0;
+    text-align: center;
+}
+
+.qtd h1{
+    text-align: end;
+    width: 100%;
+    font-size: 70px;
+    padding-right: 20px;
+}
+
+.add-customer{
+    width: 30%;
+    background-color: #65E1D3;
+    border-radius: 5px;
+    border: 1px solid black;
+    height: 178px;
+}
+
+.add-customer a{
+    font-weight: bold;
+    font-size: 24px;
+    margin: 16px 0;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+.add-customer a p {
+    margin: 16px 0;
+    text-align: center;      
+}
+
+.add-customer a div {
+    width: 100%;
+    text-align: end;
+    padding-right: 20px;
+}
+
+.btn-deletar {
+    background-color: red;
+    width: 100px;
+    margin-right: 20px;
+}
+
+.btn-deletar a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.btn-editar {
+    background-color: orange;
+    color: black;
+    font-weight: bold;
+    width: 100px;
+}
+
+.btn-editar a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+footer {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    flex-direction:column; 
+    align-items: center;
+    padding-top: 30px;
+    height: 150px;
+    margin-top: 200px;
+}
+
+footer div {
+    display: flex;
+}
+
+footer div h3 {
+    margin:25px 20px ;
+}
+
+footer h3{
+    font-size: 18px;
+    color: rgba(101, 225, 211, 1);
+}
+
+footer h3 span{
+    color: white;
+}
