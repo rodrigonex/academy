@@ -1,68 +1,66 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
 
     <!-- Importe o CSS do Bootstrap usando um CDN -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css"  href="{% static 'css/main.css' %}">
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light ">
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/sobre/">Serviços</a>
-                </li>
-                <li class="nav-item">
-                    <span class="navbar-text">|</span>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contato/">Planos</a>
-                </li>
-                <li class="nav-item">
-                    <span class="navbar-text">|</span>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contato/">Sobre</a>
-                </li>
-                <li class="nav-item">
-                    <span class="navbar-text">|</span> 
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contato/">Contato</a>
-                </li>
-                <li class="nav-item button-menu">
-                    <a class="btn" href="/contato/">Cadastre-se </a>
-                </li>
-                <li class="nav-item button-menu">
-                    
-                    <a class="btn" href="/contato/">Login </a>
-                </li>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <span class="navbar-text">|</span>
+          </li>
 
-            </ul>
-        </div>
+          <li class="nav-item">
+            <a class="nav-link" href="personal/">Lista de Personais</a>
+          </li>
+          <li class="nav-item">
+            <span class="navbar-text">|</span>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="customer/">Lista de Clientes</a>
+          </li>
+          <li class="nav-item">
+            <span class="navbar-text">|</span>
+          </li>
+          <li class="nav-item button-menu">
+            <a class="btn" href="customer_form/">Cadastro de Clientes</a>
+          </li>
+          <li class="nav-item">
+            <span class="navbar-text">|</span>
+          </li>
+          <li class="nav-item button-menu">
+            <a class="btn" href="personal_form/">Cadastro de Personal</a>
+          </li>
+        </ul>
+      </div>
     </nav>
     <section class="banner">
-        <h2>VAMOS  <span> TRANSFORMAR </span> A SUA VIDA</h2>
-        <h2>MUDE SEU <span> MINDSET </span> COM A GENTE </h2>
+      <h2>VAMOS <span> TRANSFORMAR </span> A SUA VIDA</h2>
+      <h2>MUDE SEU <span> MINDSET </span> COM A GENTE</h2>
     </section>
     <section class="whats">
-        <h2>PORQUE A  <span>ATIVIDADE</span> FISICA É IMPORTANTE ?</h2>
-        <div class="container-whats">
-            image
-        </div>
+      <h2>PORQUE A <span>ATIVIDADE</span> FISICA É IMPORTANTE ?</h2>
+      <div class="container-whats">image</div>
     </section>
 
     <!-- Importe os scripts JavaScript do Bootstrap usando um CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html> 
+  </body>
+</html>
